@@ -1,0 +1,52 @@
+erDiagram
+  USUARIOS ||--o| CLIENTES : posee
+  USUARIOS ||--o{ DIRECCIONES : registra
+  USUARIOS ||--o{ SESIONES : inicia
+  USUARIOS ||--o{ USUARIOS_ROLES : recibe
+  ROLES ||--o{ USUARIOS_ROLES : agrupa
+  ROLES ||--o{ ROLES_PERMISOS : contiene
+  PERMISOS ||--o{ ROLES_PERMISOS : habilita
+  USUARIOS ||--o{ CONSENTIMIENTOS : otorga
+
+  CATEGORIAS ||--o{ PRODUCTOS : clasifica
+  MARCAS ||--o{ PRODUCTOS : identifica
+  PRODUCTOS ||--o{ IMAGENES_PRODUCTO : muestra
+  PRODUCTOS ||--o{ ESPECIFICACIONES_TECNICAS : describe
+  PRODUCTOS ||--o{ PRODUCTOS_PROVEEDORES : abastece
+  PROVEEDORES ||--o{ PRODUCTOS_PROVEEDORES : suministra
+  PRODUCTOS ||--o{ INVENTARIO : almacena
+  ALMACENES ||--o{ INVENTARIO : contiene
+  INVENTARIO ||--o{ MOVIMIENTOS_INVENTARIO : genera
+
+  CLIENTES ||--o{ CARRITOS : crea
+  CARRITOS ||--o{ CARRITO_DETALLE : contiene
+  PRODUCTOS ||--o{ CARRITO_DETALLE : agrega
+  CARRITOS ||--o| PEDIDOS : convierte
+  CLIENTES ||--o{ PEDIDOS : compra
+  DIRECCIONES ||--o{ PEDIDOS : entrega
+  CUPONES ||--o{ PEDIDOS : descuenta
+  ESTADOS_PEDIDO ||--o{ PEDIDOS : define
+  PEDIDOS ||--|{ DETALLE_PEDIDO : contiene
+  PRODUCTOS ||--o{ DETALLE_PEDIDO : referencia
+  PEDIDOS ||--o{ HISTORIAL_PEDIDO : registra
+
+  PEDIDOS ||--o{ PAGOS : recibe
+  METODOS_PAGO ||--o{ PAGOS : procesa
+  CLIENTES ||--o{ DATOS_FISCALES : declara
+  PEDIDOS ||--o| FACTURAS : factura
+  DATOS_FISCALES ||--o{ FACTURAS : emite
+  PEDIDOS ||--o{ ENVIOS : despacha
+  EMPRESAS_PAQUETERIA ||--o{ ENVIOS : transporta
+  ENVIOS ||--o{ RASTREO_ENVIO : actualiza
+  PEDIDOS ||--o{ DEVOLUCIONES : origina
+  DEVOLUCIONES ||--o{ REEMBOLSOS : resuelve
+  PAGOS ||--o{ REEMBOLSOS : retorna
+
+  CLIENTES ||--o{ FAVORITOS : guarda
+  PRODUCTOS ||--o{ FAVORITOS : recibe
+  CLIENTES ||--o{ RESENAS : escribe
+  PRODUCTOS ||--o{ RESENAS : valora
+  CLIENTES ||--o{ TICKETS_SOPORTE : abre
+  PEDIDOS ||--o{ TICKETS_SOPORTE : relaciona
+  TICKETS_SOPORTE ||--o{ MENSAJES_SOPORTE : contiene
+  USUARIOS ||--o{ SOLICITUDES_ARCO : solicita
