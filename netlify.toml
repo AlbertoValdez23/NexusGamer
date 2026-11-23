@@ -1,5 +1,5 @@
 [build]
-command = "pnpm run build"
+command = "npx -y pnpm@10.34.9 install --frozen-lockfile && npx -y pnpm@10.34.9 run build"
 publish = "dist"
 
 [[redirects]]

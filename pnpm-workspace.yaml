@@ -8,3 +8,10 @@ supportedArchitectures:
     - arm64
   libc:
     - glibc
+overrides:
+  vite: 6.3.5
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+ignoredBuiltDependencies:
+  - '@scarf/scarf'
